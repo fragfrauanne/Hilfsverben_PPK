@@ -1,198 +1,36 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hilfsverben / Präsens – Präteritum – Konjunktiv II</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 2rem;
-      background: #ffffff;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    table { border-collapse: separate; border-spacing: 8px; }
-    th, td {
-      padding: .6rem 1rem;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,.08);
-    }
-    th { font-size: 1.1rem; color: white; }
-
-    .head-sein { background: #6AA9FF; }
-    .head-haben { background: #4CC38A; }
-    .head-werden { background: #A68CF6; }
-
-    .label { background:#eb9870; color:white; font-weight:700; }
-
-    /* Farbvarianten je Verb+Tempus */
-    :root {
-      /* SEIN */
-      --sein-hell:#E8F1FF; --sein-mid:#BDD6FF; --sein-strong:#6AA9FF;
-      /* HABEN */
-      --haben-hell:#EAF8F1; --haben-mid:#BFEBD7; --haben-strong:#4CC38A;
-      /* WERDEN */
-      --werden-hell:#F0ECFB; --werden-mid:#D6CCF7; --werden-strong:#A68CF6;
-      --border:#ddd; --text:#1d1d1f;
-    }
-
-    .cell {
-      margin:.25rem 0;
-      padding:.4rem .6rem;
-      border-radius:10px;
-      border:1px solid var(--border);
-      color:var(--text);
-    }
-
-    /* sein */
-    .sein-praes { background: linear-gradient(90deg, var(--sein-hell), var(--sein-mid)); }
-    .sein-praet { background: linear-gradient(90deg, var(--sein-mid), var(--sein-strong)); }
-    .sein-k2    { background: var(--sein-strong); color:white; }
-
-    /* haben */
-    .haben-praes { background: linear-gradient(90deg, var(--haben-hell), var(--haben-mid)); }
-    .haben-praet { background: linear-gradient(90deg, var(--haben-mid), var(--haben-strong)); }
-    .haben-k2    { background: var(--haben-strong); color:white; }
-
-    /* werden */
-    .werden-praes { background: linear-gradient(90deg, var(--werden-hell), var(--werden-mid)); }
-    .werden-praet { background: linear-gradient(90deg, var(--werden-mid), var(--werden-strong)); }
-    .werden-k2    { background: var(--werden-strong); color:white; }
-  </style>
-</head>
-<body>
-  <table>
-    <thead>
-      <tr>
-        <th colspan="4" style="background-color:transparent; color:black; font-size:1.4rem; text-align:center; border-radius:none; box-shadow:none;">
-          Hilfsverben / Präsens – Präteritum – Konjunktiv II
-        </th>
-      </tr>
-      <tr>
-        <th></th>
-        <th class="head-sein">sein<br><small>be</small></th>
-        <th class="head-haben">haben<br><small>have</small></th>
-        <th class="head-werden">werden<br><small>become</small></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="label">ich</td>
-        <td>
-          <div class="cell sein-praes">bin</div>
-          <div class="cell sein-praet">war</div>
-          <div class="cell sein-k2">wäre</div>
-        </td>
-        <td>
-          <div class="cell haben-praes">habe</div>
-          <div class="cell haben-praet">hatte</div>
-          <div class="cell haben-k2">hätte</div>
-        </td>
-        <td>
-          <div class="cell werden-praes">werde</div>
-          <div class="cell werden-praet">wurde</div>
-          <div class="cell werden-k2">würde</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="label">du</td>
-        <td>
-          <div class="cell sein-praes">bist</div>
-          <div class="cell sein-praet">warst</div>
-          <div class="cell sein-k2">wärest</div>
-        </td>
-        <td>
-          <div class="cell haben-praes">hast</div>
-          <div class="cell haben-praet">hattest</div>
-          <div class="cell haben-k2">hättest</div>
-        </td>
-        <td>
-          <div class="cell werden-praes">wirst</div>
-          <div class="cell werden-praet">wurdest</div>
-          <div class="cell werden-k2">würdest</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="label">er/sie/es</td>
-        <td>
-          <div class="cell sein-praes">ist</div>
-          <div class="cell sein-praet">war</div>
-          <div class="cell sein-k2">wäre</div>
-        </td>
-        <td>
-          <div class="cell haben-praes">hat</div>
-          <div class="cell haben-praet">hatte</div>
-          <div class="cell haben-k2">hätte</div>
-        </td>
-        <td>
-          <div class="cell werden-praes">wird</div>
-          <div class="cell werden-praet">wurde</div>
-          <div class="cell werden-k2">würde</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="label">wir</td>
-        <td>
-          <div class="cell sein-praes">sind</div>
-          <div class="cell sein-praet">waren</div>
-          <div class="cell sein-k2">wären</div>
-        </td>
-        <td>
-          <div class="cell haben-praes">haben</div>
-          <div class="cell haben-praet">hatten</div>
-          <div class="cell haben-k2">hätten</div>
-        </td>
-        <td>
-          <div class="cell werden-praes">werden</div>
-          <div class="cell werden-praet">wurden</div>
-          <div class="cell werden-k2">würden</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="label">ihr</td>
-        <td>
-          <div class="cell sein-praes">seid</div>
-          <div class="cell sein-praet">wart</div>
-          <div class="cell sein-k2">wäret</div>
-        </td>
-        <td>
-          <div class="cell haben-praes">habt</div>
-          <div class="cell haben-praet">hattet</div>
-          <div class="cell haben-k2">hättet</div>
-        </td>
-        <td>
-          <div class="cell werden-praes">werdet</div>
-          <div class="cell werden-praet">wurdet</div>
-          <div class="cell werden-k2">würdet</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="label">sie/Sie</td>
-        <td>
-          <div class="cell sein-praes">sind</div>
-          <div class="cell sein-praet">waren</div>
-          <div class="cell sein-k2">wären</div>
-        </td>
-        <td>
-          <div class="cell haben-praes">haben</div>
-          <div class="cell haben-praet">hatten</div>
-          <div class="cell haben-k2">hätten</div>
-        </td>
-        <td>
-          <div class="cell werden-praes">werden</div>
-          <div class="cell werden-praet">wurden</div>
-          <div class="cell werden-k2">würden</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <footer style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #555;">
-    © Anne Felgentreu (08.2025)
-  </footer>
-</body>
-</html>
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2"></th>
+      <th colspan="3" class="head-sein">sein</th>
+      <th colspan="3" class="head-haben">haben</th>
+      <th colspan="3" class="head-werden">werden</th>
+    </tr>
+    <tr>
+      <th class="sub">Präsens</th>
+      <th class="sub">Präteritum</th>
+      <th class="sub">Konj. II</th>
+      <th class="sub">Präsens</th>
+      <th class="sub">Präteritum</th>
+      <th class="sub">Konj. II</th>
+      <th class="sub">Präsens</th>
+      <th class="sub">Präteritum</th>
+      <th class="sub">Konj. II</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="label ich">ich</td>
+      <td class="sein-praes">bin</td>
+      <td class="sein-praet">war</td>
+      <td class="sein-k2">wäre</td>
+      <td class="haben-praes">habe</td>
+      <td class="haben-praet">hatte</td>
+      <td class="haben-k2">hätte</td>
+      <td class="werden-praes">werde</td>
+      <td class="werden-praet">wurde</td>
+      <td class="werden-k2">würde</td>
+    </tr>
+    <!-- du, er/sie/es, wir, ihr, sie/Sie -->
+  </tbody>
+</table>
