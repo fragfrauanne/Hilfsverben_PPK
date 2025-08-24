@@ -1,36 +1,239 @@
-<table>
-  <thead>
-    <tr>
-      <th rowspan="2"></th>
-      <th colspan="3" class="head-sein">sein</th>
-      <th colspan="3" class="head-haben">haben</th>
-      <th colspan="3" class="head-werden">werden</th>
-    </tr>
-    <tr>
-      <th class="sub">Präsens</th>
-      <th class="sub">Präteritum</th>
-      <th class="sub">Konj. II</th>
-      <th class="sub">Präsens</th>
-      <th class="sub">Präteritum</th>
-      <th class="sub">Konj. II</th>
-      <th class="sub">Präsens</th>
-      <th class="sub">Präteritum</th>
-      <th class="sub">Konj. II</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="label ich">ich</td>
-      <td class="sein-praes">bin</td>
-      <td class="sein-praet">war</td>
-      <td class="sein-k2">wäre</td>
-      <td class="haben-praes">habe</td>
-      <td class="haben-praet">hatte</td>
-      <td class="haben-k2">hätte</td>
-      <td class="werden-praes">werde</td>
-      <td class="werden-praet">wurde</td>
-      <td class="werden-k2">würde</td>
-    </tr>
-    <!-- du, er/sie/es, wir, ihr, sie/Sie -->
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hilfsverben / Präsens – Präteritum – Konjunktiv II</title>
+  <style>
+    :root{
+      /* Verb-Farben (hell → mittel → kräftig) */
+      --sein-1:#FFF9DB;  --sein-2:#FFE066;  --sein-3:#FFB400;
+      --haben-1:#E8F9E5; --haben-2:#A8E6A2; --haben-3:#4CC38A;
+      --werd-1:#E7F2FF;  --werd-2:#A6D0F2;  --werd-3:#3A8DDE;
+
+      /* Pronomen-Farben (links) */
+      --p-ich:#E57373;
+      --p-du:#EB9870;
+      --p-ersiees:#F4BA65;
+      --p-wir:#F6C770;
+      --p-ihr:#F7D47A;
+      --p-sie:#F4E187;
+
+      --header-gray:#8E8E93;
+      --text:#1d1d1f;
+      --white:#fff;
+      --border:#e5e5e5;
+      --shadow:0 4px 10px rgba(0,0,0,0.08);
+      --radius:14px;
+    }
+
+    html,body{
+      margin:0; padding:0; background:#fff; color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 48px auto;
+      padding: 0 20px;
+    }
+
+    h1{
+      text-align:center;
+      font-size: clamp(22px, 3.4vw, 32px);
+      margin: 0 0 22px 0;
+    }
+
+    .tbl{
+      width:100%;
+      border-collapse: separate;
+      border-spacing:10px;
+    }
+
+    th, td{
+      padding: 12px 14px;
+      text-align:center;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border:1px solid var(--border);
+      vertical-align: middle;
+      font-size: clamp(14px, 1.8vw, 18px);
+      line-height:1.25;
+    }
+
+    /* Oberste Verb-Header (grau, über je 3 Spalten) */
+    .verb-head{
+      background: var(--header-gray);
+      color: var(--white);
+      font-weight: 700;
+      letter-spacing:.2px;
+      border:none;
+    }
+
+    /* Unter-Header (Tempora) – je Verb abgestuft */
+    .sub{ font-weight:600; }
+
+    .sein-1{ background: var(--sein-1); }
+    .sein-2{ background: var(--sein-2); }
+    .sein-3{ background: var(--sein-3); color:var(--white); }
+
+    .haben-1{ background: var(--haben-1); }
+    .haben-2{ background: var(--haben-2); }
+    .haben-3{ background: var(--haben-3); color:var(--white); }
+
+    .werd-1{ background: var(--werd-1); }
+    .werd-2{ background: var(--werd-2); }
+    .werd-3{ background: var(--werd-3); color:var(--white); }
+
+    /* Personen-Labels links */
+    .p{ color:#fff; font-weight:700; border:none; width:140px; }
+    .p-ich{ background: var(--p-ich); }
+    .p-du{ background: var(--p-du); }
+    .p-ersiees{ background: var(--p-ersiees); color:#573a00; } /* dunklere Schrift für Kontrast */
+    .p-wir{ background: var(--p-wir); color:#573a00; }
+    .p-ihr{ background: var(--p-ihr); color:#5b3f00; }
+    .p-sie{ background: var(--p-sie); color:#5b3f00; }
+
+    /* Typo-Feinschliff */
+    small{ display:block; opacity:.9; font-weight:500; font-size:.9em; }
+
+    /* Druckfreundlich */
+    @media print{
+      .wrap{ margin:0; padding:0; }
+      th, td{ box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Hilfsverben / Präsens – Präteritum – Konjunktiv II</h1>
+
+    <table class="tbl" role="table" aria-label="Konjugation der Hilfsverben">
+      <thead>
+        <tr>
+          <th style="background:transparent; border:none; box-shadow:none;"></th>
+          <th colspan="3" class="verb-head">sein</th>
+          <th colspan="3" class="verb-head">haben</th>
+          <th colspan="3" class="verb-head">werden</th>
+        </tr>
+        <tr>
+          <th style="background:transparent; border:none; box-shadow:none;"></th>
+          <th class="sub sein-1">Präsens</th>
+          <th class="sub sein-2">Präteritum</th>
+          <th class="sub sein-3">Konjunktiv&nbsp;II</th>
+
+          <th class="sub haben-1">Präsens</th>
+          <th class="sub haben-2">Präteritum</th>
+          <th class="sub haben-3">Konjunktiv&nbsp;II</th>
+
+          <th class="sub werd-1">Präsens</th>
+          <th class="sub werd-2">Präteritum</th>
+          <th class="sub werd-3">Konjunktiv&nbsp;II</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- ich -->
+        <tr>
+          <td class="p p-ich">ich</td>
+          <td class="sein-1">bin</td>
+          <td class="sein-2">war</td>
+          <td class="sein-3">wäre</td>
+
+          <td class="haben-1">habe</td>
+          <td class="haben-2">hatte</td>
+          <td class="haben-3">hätte</td>
+
+          <td class="werd-1">werde</td>
+          <td class="werd-2">wurde</td>
+          <td class="werd-3">würde</td>
+        </tr>
+
+        <!-- du -->
+        <tr>
+          <td class="p p-du">du</td>
+          <td class="sein-1">bist</td>
+          <td class="sein-2">warst</td>
+          <td class="sein-3">wärest</td>
+
+          <td class="haben-1">hast</td>
+          <td class="haben-2">hattest</td>
+          <td class="haben-3">hättest</td>
+
+          <td class="werd-1">wirst</td>
+          <td class="werd-2">wurdest</td>
+          <td class="werd-3">würdest</td>
+        </tr>
+
+        <!-- er/sie/es -->
+        <tr>
+          <td class="p p-ersiees">er / sie / es</td>
+          <td class="sein-1">ist</td>
+          <td class="sein-2">war</td>
+          <td class="sein-3">wäre</td>
+
+          <td class="haben-1">hat</td>
+          <td class="haben-2">hatte</td>
+          <td class="haben-3">hätte</td>
+
+          <td class="werd-1">wird</td>
+          <td class="werd-2">wurde</td>
+          <td class="werd-3">würde</td>
+        </tr>
+
+        <!-- wir -->
+        <tr>
+          <td class="p p-wir">wir</td>
+          <td class="sein-1">sind</td>
+          <td class="sein-2">waren</td>
+          <td class="sein-3">wären</td>
+
+          <td class="haben-1">haben</td>
+          <td class="haben-2">hatten</td>
+          <td class="haben-3">hätten</td>
+
+          <td class="werd-1">werden</td>
+          <td class="werd-2">wurden</td>
+          <td class="werd-3">würden</td>
+        </tr>
+
+        <!-- ihr -->
+        <tr>
+          <td class="p p-ihr">ihr</td>
+          <td class="sein-1">seid</td>
+          <td class="sein-2">wart</td>
+          <td class="sein-3">wäret</td>
+
+          <td class="haben-1">habt</td>
+          <td class="haben-2">hattet</td>
+          <td class="haben-3">hättet</td>
+
+          <td class="werd-1">werdet</td>
+          <td class="werd-2">wurdet</td>
+          <td class="werd-3">würdet</td>
+        </tr>
+
+        <!-- sie/Sie -->
+        <tr>
+          <td class="p p-sie">sie / Sie</td>
+          <td class="sein-1">sind</td>
+          <td class="sein-2">waren</td>
+          <td class="sein-3">wären</td>
+
+          <td class="haben-1">haben</td>
+          <td class="haben-2">hatten</td>
+          <td class="haben-3">hätten</td>
+
+          <td class="werd-1">werden</td>
+          <td class="werd-2">wurden</td>
+          <td class="werd-3">würden</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="text-align:center; margin:22px 0 0; color:#666;">
+      © Anne Felgentreu (08.2025)
+    </p>
+  </div>
+</body>
+</html>
