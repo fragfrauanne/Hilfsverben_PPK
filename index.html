@@ -1,169 +1,184 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hilfsverben / Präsens – Präteritum – Konjunktiv II</title>
-<style>
-  :root{
-    --header-gray:#8F8F93;
-    --text:#1d1d1f;
-    --border:#e6e6e6;
-    --radius:14px;
-    --shadow:0 2px 6px rgba(0,0,0,.05);
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hilfsverben / Präsens – Präteritum – Konjunktiv II</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      background: #ffffff;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  html,body{
-    margin:0; background:#fff; color:var(--text);
-    font-family: sans-serif;
-  }
-  .wrap{ max-width:1100px; margin:36px auto 28px; padding:0 16px; }
-  h1{ text-align:center; font-size:clamp(18px,2.4vw,22px); margin:0 0 16px; font-weight:700; }
+    table {
+      border-collapse: separate;
+      border-spacing: 8px;
+    }
 
-  table{ width:100%; border-collapse:separate; border-spacing:10px; }
-  th, td{
-    padding:.55rem .9rem;
-    text-align:center;
-    border-radius:var(--radius);
-    border:1px solid var(--border);
-    box-shadow:var(--shadow);
-    font-size:14px;
-    line-height:1.2;
-    white-space:nowrap;
-  }
+    th, td {
+      padding: 1rem;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
 
-  /* Header */
-  .spacer{ background:transparent; border:none; box-shadow:none; }
-  .verb-head{ background:var(--header-gray); color:#fff; font-weight:700; border:none; }
-  .sub{ font-weight:700; }
+    th {
+      font-size: 1.1rem;
+      color: white;
+    }
 
-  /* === Volltonfarben je Feld: Gelb → Rot über 9 Spalten === */
-.sein-pres  { background:#f7e99a; } /* helles Gelb */
-.sein-praet { background:#f7dd85; } /* gold-gelbiger */
-.sein-k2    { background:#f6c770; } /* gold-gelb (Übergang zu orange) */
+    .verb-head {
+      background: #8f8f93;
+      font-weight: bold;
+      border: none;
+    }
 
-.haben-pres  { background:#f4b55e; } /* weiches Orange-Gelb, klar dunkler als sein-k2 */
-.haben-praet { background:#f4a358; } /* Orange */
-.haben-k2    { background:#ef8955; } /* kräftiges Orange */
+    .sub {
+      font-weight: bold;
+      color: black;
+    }
 
-.werd-pres  { background:#ec8265; } /* orange-rot */
-.werd-praet { background:#e96d68; } /* ziegelfarben */
-.werd-k2    { background:#e57373; } /* warmes Rot */
+    /* Farbpalette Gelb -> Orange -> Rot */
+    .sein-pres  { background:#f7e99a; }
+    .sein-praet { background:#f7dd85; }
+    .sein-k2    { background:#f6c770; }
 
+    .haben-pres { background:#f4b55e; }
+    .haben-praet{ background:#f4a358; }
+    .haben-k2   { background:#ef8955; }
 
+    .werd-pres  { background:#ec8265; }
+    .werd-praet { background:#e96d68; }
+    .werd-k2    { background:#e57373; }
 
-  /* Personalpronomen links */
-  .p{ background:#ede6e6; color:#000000; font-weight:700; }
+    /* Personalpronomen */
+    .p {
+      background:#ede6e6;
+      color:#000000;
+      font-weight: bold;
+    }
 
-  @media print{ th,td{ box-shadow:none; } }
-</style>
+    h1 {
+      font-size: 1.4rem;
+      margin: 0 0 0 0;
+      font-weight: 700;
+      text-align: center;
+      color: black;
+      box-shadow: none;
+      background: transparent;
+    }
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Hilfsverben / Präsens – Präteritum – Konjunktiv II</h1>
-
-    <table role="table" aria-label="Hilfsverben in drei Tempora">
-      <thead>
-        <tr>
-          <th class="spacer"></th>
-          <th class="verb-head" colspan="3">sein</th>
-          <th class="verb-head" colspan="3">haben</th>
-          <th class="verb-head" colspan="3">werden</th>
-        </tr>
-        <tr>
-          <th class="spacer"></th>
-          <th class="sub sein-pres">Präsens</th>
-          <th class="sub sein-praet">Präteritum</th>
-          <th class="sub sein-k2">Konjunktiv&nbsp;II</th>
-
-          <th class="sub haben-pres">Präsens</th>
-          <th class="sub haben-praet">Präteritum</th>
-          <th class="sub haben-k2">Konjunktiv&nbsp;II</th>
-
-          <th class="sub werd-pres">Präsens</th>
-          <th class="sub werd-praet">Präteritum</th>
-          <th class="sub werd-k2">Konjunktiv&nbsp;II</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="p">ich</td>
-          <td class="sein-pres">bin</td>
-          <td class="sein-praet">war</td>
-          <td class="sein-k2">wäre</td>
-          <td class="haben-pres">habe</td>
-          <td class="haben-praet">hatte</td>
-          <td class="haben-k2">hätte</td>
-          <td class="werd-pres">werde</td>
-          <td class="werd-praet">wurde</td>
-          <td class="werd-k2">würde</td>
-        </tr>
-        <tr>
-          <td class="p">du</td>
-          <td class="sein-pres">bist</td>
-          <td class="sein-praet">warst</td>
-          <td class="sein-k2">wär(e)st</td>
-          <td class="haben-pres">hast</td>
-          <td class="haben-praet">hattest</td>
-          <td class="haben-k2">hättest</td>
-          <td class="werd-pres">wirst</td>
-          <td class="werd-praet">wurdest</td>
-          <td class="werd-k2">würdest</td>
-        </tr>
-        <tr>
-          <td class="p">er / sie / es</td>
-          <td class="sein-pres">ist</td>
-          <td class="sein-praet">war</td>
-          <td class="sein-k2">wäre</td>
-          <td class="haben-pres">hat</td>
-          <td class="haben-praet">hatte</td>
-          <td class="haben-k2">hätte</td>
-          <td class="werd-pres">wird</td>
-          <td class="werd-praet">wurde</td>
-          <td class="werd-k2">würde</td>
-        </tr>
-        <tr>
-          <td class="p">wir</td>
-          <td class="sein-pres">sind</td>
-          <td class="sein-praet">waren</td>
-          <td class="sein-k2">wären</td>
-          <td class="haben-pres">haben</td>
-          <td class="haben-praet">hatten</td>
-          <td class="haben-k2">hätten</td>
-          <td class="werd-pres">werden</td>
-          <td class="werd-praet">wurden</td>
-          <td class="werd-k2">würden</td>
-        </tr>
-        <tr>
-          <td class="p">ihr</td>
-          <td class="sein-pres">seid</td>
-          <td class="sein-praet">wart</td>
-          <td class="sein-k2">wär(e)t</td>
-          <td class="haben-pres">habt</td>
-          <td class="haben-praet">hattet</td>
-          <td class="haben-k2">hättet</td>
-          <td class="werd-pres">werdet</td>
-          <td class="werd-praet">wurdet</td>
-          <td class="werd-k2">würdet</td>
-        </tr>
-        <tr>
-          <td class="p">sie / Sie</td>
-          <td class="sein-pres">sind</td>
-          <td class="sein-praet">waren</td>
-          <td class="sein-k2">wären</td>
-          <td class="haben-pres">haben</td>
-          <td class="haben-praet">hatten</td>
-          <td class="haben-k2">hätten</td>
-          <td class="werd-pres">werden</td>
-          <td class="werd-praet">wurden</td>
-          <td class="werd-k2">würden</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <footer style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #555;">
-      © Anne Felgentreu (08.2025)
-    </footer>
-  </div>
+  <table role="table" aria-label="Hilfsverben in drei Tempora">
+    <thead>
+      <tr>
+        <th colspan="10" style="background-color:transparent; color:black; font-size:1.4rem; text-align:center; border:none; box-shadow:none;">
+          Hilfsverben / Präsens – Präteritum – Konjunktiv II
+        </th>
+      </tr>
+      <tr>
+        <th style="background:transparent; box-shadow:none; border:none;"></th>
+        <th class="verb-head" colspan="3">sein</th>
+        <th class="verb-head" colspan="3">haben</th>
+        <th class="verb-head" colspan="3">werden</th>
+      </tr>
+      <tr>
+        <th style="background:transparent; box-shadow:none; border:none;"></th>
+        <th class="sub sein-pres">Präsens</th>
+        <th class="sub sein-praet">Präteritum</th>
+        <th class="sub sein-k2">Konjunktiv II</th>
+        <th class="sub haben-pres">Präsens</th>
+        <th class="sub haben-praet">Präteritum</th>
+        <th class="sub haben-k2">Konjunktiv II</th>
+        <th class="sub werd-pres">Präsens</th>
+        <th class="sub werd-praet">Präteritum</th>
+        <th class="sub werd-k2">Konjunktiv II</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="p">ich</td>
+        <td class="sein-pres">bin</td>
+        <td class="sein-praet">war</td>
+        <td class="sein-k2">wäre</td>
+        <td class="haben-pres">habe</td>
+        <td class="haben-praet">hatte</td>
+        <td class="haben-k2">hätte</td>
+        <td class="werd-pres">werde</td>
+        <td class="werd-praet">wurde</td>
+        <td class="werd-k2">würde</td>
+      </tr>
+      <tr>
+        <td class="p">du</td>
+        <td class="sein-pres">bist</td>
+        <td class="sein-praet">warst</td>
+        <td class="sein-k2">wär(e)st</td>
+        <td class="haben-pres">hast</td>
+        <td class="haben-praet">hattest</td>
+        <td class="haben-k2">hättest</td>
+        <td class="werd-pres">wirst</td>
+        <td class="werd-praet">wurdest</td>
+        <td class="werd-k2">würdest</td>
+      </tr>
+      <tr>
+        <td class="p">er / sie / es</td>
+        <td class="sein-pres">ist</td>
+        <td class="sein-praet">war</td>
+        <td class="sein-k2">wäre</td>
+        <td class="haben-pres">hat</td>
+        <td class="haben-praet">hatte</td>
+        <td class="haben-k2">hätte</td>
+        <td class="werd-pres">wird</td>
+        <td class="werd-praet">wurde</td>
+        <td class="werd-k2">würde</td>
+      </tr>
+      <tr>
+        <td class="p">wir</td>
+        <td class="sein-pres">sind</td>
+        <td class="sein-praet">waren</td>
+        <td class="sein-k2">wären</td>
+        <td class="haben-pres">haben</td>
+        <td class="haben-praet">hatten</td>
+        <td class="haben-k2">hätten</td>
+        <td class="werd-pres">werden</td>
+        <td class="werd-praet">wurden</td>
+        <td class="werd-k2">würden</td>
+      </tr>
+      <tr>
+        <td class="p">ihr</td>
+        <td class="sein-pres">seid</td>
+        <td class="sein-praet">wart</td>
+        <td class="sein-k2">wär(e)t</td>
+        <td class="haben-pres">habt</td>
+        <td class="haben-praet">hattet</td>
+        <td class="haben-k2">hättet</td>
+        <td class="werd-pres">werdet</td>
+        <td class="werd-praet">wurdet</td>
+        <td class="werd-k2">würdet</td>
+      </tr>
+      <tr>
+        <td class="p">sie / Sie</td>
+        <td class="sein-pres">sind</td>
+        <td class="sein-praet">waren</td>
+        <td class="sein-k2">wären</td>
+        <td class="haben-pres">haben</td>
+        <td class="haben-praet">hatten</td>
+        <td class="haben-k2">hätten</td>
+        <td class="werd-pres">werden</td>
+        <td class="werd-praet">wurden</td>
+        <td class="werd-k2">würden</td>
+      </tr>
+    </tbody>
+  </table>
+  <footer style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #555;">
+    © Anne Felgentreu (08.2025)
+  </footer>
 </body>
 </html>
