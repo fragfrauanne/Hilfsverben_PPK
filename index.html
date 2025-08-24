@@ -18,18 +18,23 @@
     table {
       border-collapse: separate;
       border-spacing: 8px;
+      table-layout: fixed;   /* feste Spalten */
+      width: auto;           /* keine Anpassung, Breite durch Spalten bestimmt */
     }
 
     th, td {
-      padding: 1rem;
+      width: 130px;          /* feste Breite je Spalte → nichts bricht um */
+      padding: 0.8rem;
+      font-size: 0.9rem;
       text-align: center;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border: 1px solid #ddd;
+      white-space: nowrap;   /* kein Umbruch, alles bleibt in einer Zeile */
     }
 
     th {
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       color: white;
     }
 
@@ -66,7 +71,7 @@
 
     h1 {
       font-size: 1.4rem;
-      margin: 0 0 0 0;
+      margin: 0;
       font-weight: 700;
       text-align: center;
       color: black;
