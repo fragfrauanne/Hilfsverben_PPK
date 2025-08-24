@@ -6,54 +6,50 @@
 <title>Hilfsverben / Präsens – Präteritum – Konjunktiv II</title>
 <style>
   :root{
-    /* Pastell-Paletten (hell → dunkler), bewusst harmonisch gehalten */
+    /* Pastell-Paletten (hell → dunkler) */
     /* sein = Gelb (warm, pastellig) */
-    --sein-1:#FFF7DC; /* sehr helles Vanille */
-    --sein-2:#FFE7A8; /* mildes Pastellgelb */
-    --sein-3:#FFD070; /* sanftes Aprikosengelb */
-    --sein-4:#F4B04A; /* warmes Honiggelb (noch pastell) */
+    --sein-1:#FFF7DC; --sein-2:#FFE7A8; --sein-3:#FFD070; --sein-4:#F4B04A;
 
-    /* haben = Grün (Sage/Laubgrün, KEIN Mint) */
-    --haben-1:#EEF4EF; /* sehr helles Salbeigrün */
-    --haben-2:#CFE2D3; /* blasses Laubgrün */
-    --haben-3:#A9D0B4; /* weiches Salbei/Moos */
-    --haben-4:#86BE9B; /* gedämpftes Laubgrün */
+    /* haben = Grün (Sage/Laubgrün – kein Mint) */
+    --haben-1:#EEF4EF; --haben-2:#CFE2D3; --haben-3:#A9D0B4; --haben-4:#86BE9B;
 
-    /* werden = Blau (weiches Himmel-/Kornblumenblau) */
-    --werd-1:#EEF3FF; /* sehr helles Himmelblau */
-    --werd-2:#CAD9F6; /* zartes Kornblumenblau */
-    --werd-3:#9FBCE6; /* sanftes Pastellblau */
-    --werd-4:#7AA3D6; /* gedämpftes Mittelblau */
+    /* werden = Blau (weiches Kornblumenblau) */
+    --werd-1:#EEF3FF; --werd-2:#CAD9F6; --werd-3:#9FBCE6; --werd-4:#7AA3D6;
 
     --header-gray:#8F8F93;
     --text:#1d1d1f;
     --border:#e6e6e6;
-    --radius:12px;
+    --radius:16px;                 /* runder, pilliger */
     --shadow:0 2px 6px rgba(0,0,0,.05);
   }
 
-  html,body{ margin:0; background:#fff; color:var(--text);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; }
+  html,body{
+    margin:0; background:#fff; color:var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  }
   .wrap{ max-width:1100px; margin:36px auto 28px; padding:0 16px; }
-  h1{ text-align:center; font-size:clamp(18px,2.6vw,24px); margin:0 0 14px; font-weight:700; }
+  h1{ text-align:center; font-size:clamp(18px,2.4vw,22px); margin:0 0 16px; font-weight:700; }
 
-  table{ width:100%; border-collapse:separate; border-spacing:8px; }
-  th,td{
-    padding:10px 12px;
+  table{ width:100%; border-collapse:separate; border-spacing:10px; }
+  th, td{
+    padding: .55rem .9rem;               /* kompakter wie in deiner Vorlage */
     text-align:center;
-    border-radius:var(--radius);
+    border-radius: var(--radius);
     border:1px solid var(--border);
-    box-shadow:var(--shadow);
-    font-size:clamp(12px,1.6vw,15px);
-    line-height:1.2;
+    box-shadow: var(--shadow);
+    font-size: 14px;                     /* kleinere Schrift */
+    line-height: 1.2;                    /* gleichmäßige Höhe */
+    white-space: nowrap;
   }
 
   /* Header */
   .spacer{ background:transparent; border:none; box-shadow:none; }
-  .verb-head{ background:var(--header-gray); color:#fff; font-weight:700; border:none; }
-  .sub{ font-weight:600; }
+  .verb-head{
+    background:var(--header-gray); color:#fff; font-weight:700; border:none;
+  }
+  .sub{ font-weight:700; }               /* wie deine Modalverben-Boxen */
 
-  /* Verlaufs-Felder: je Tempus 1→2, 2→3, 3→4 */
+  /* Verlaufs-Felder je Tempus (1→2, 2→3, 3→4) */
   .sein-pres { background:linear-gradient(180deg, var(--sein-1), var(--sein-2)); }
   .sein-praet{ background:linear-gradient(180deg, var(--sein-2), var(--sein-3)); }
   .sein-k2   { background:linear-gradient(180deg, var(--sein-3), var(--sein-4)); }
@@ -66,8 +62,8 @@
   .werd-praet{ background:linear-gradient(180deg, var(--werd-2), var(--werd-3)); }
   .werd-k2   { background:linear-gradient(180deg, var(--werd-3), var(--werd-4)); }
 
-  /* Personalpronomen links: alle weiß, dezent */
-  .p{ background:#fff; color:#555; font-weight:700; }
+  /* Personalpronomen links */
+  .p{ background:#ede6e6; color:#000000; font-weight:700; }
 
   /* Druck: kein Schatten */
   @media print{ th,td{ box-shadow:none; } }
@@ -106,86 +102,69 @@
           <td class="sein-pres">bin</td>
           <td class="sein-praet">war</td>
           <td class="sein-k2">wäre</td>
-
           <td class="haben-pres">habe</td>
           <td class="haben-praet">hatte</td>
           <td class="haben-k2">hätte</td>
-
           <td class="werd-pres">werde</td>
           <td class="werd-praet">wurde</td>
           <td class="werd-k2">würde</td>
         </tr>
-
         <tr>
           <td class="p">du</td>
           <td class="sein-pres">bist</td>
           <td class="sein-praet">warst</td>
           <td class="sein-k2">wärest</td>
-
           <td class="haben-pres">hast</td>
           <td class="haben-praet">hattest</td>
           <td class="haben-k2">hättest</td>
-
           <td class="werd-pres">wirst</td>
           <td class="werd-praet">wurdest</td>
           <td class="werd-k2">würdest</td>
         </tr>
-
         <tr>
           <td class="p">er / sie / es</td>
           <td class="sein-pres">ist</td>
           <td class="sein-praet">war</td>
           <td class="sein-k2">wäre</td>
-
           <td class="haben-pres">hat</td>
           <td class="haben-praet">hatte</td>
           <td class="haben-k2">hätte</td>
-
           <td class="werd-pres">wird</td>
           <td class="werd-praet">wurde</td>
           <td class="werd-k2">würde</td>
         </tr>
-
         <tr>
           <td class="p">wir</td>
           <td class="sein-pres">sind</td>
           <td class="sein-praet">waren</td>
           <td class="sein-k2">wären</td>
-
           <td class="haben-pres">haben</td>
           <td class="haben-praet">hatten</td>
           <td class="haben-k2">hätten</td>
-
           <td class="werd-pres">werden</td>
           <td class="werd-praet">wurden</td>
           <td class="werd-k2">würden</td>
         </tr>
-
         <tr>
           <td class="p">ihr</td>
           <td class="sein-pres">seid</td>
           <td class="sein-praet">wart</td>
           <td class="sein-k2">wäret</td>
-
           <td class="haben-pres">habt</td>
           <td class="haben-praet">hattet</td>
           <td class="haben-k2">hättet</td>
-
           <td class="werd-pres">werdet</td>
           <td class="werd-praet">wurdet</td>
           <td class="werd-k2">würdet</td>
         </tr>
-
         <tr>
           <td class="p">sie / Sie</td>
           <td class="sein-pres">sind</td>
           <td class="sein-praet">waren</td>
           <td class="sein-k2">wären</td>
-
           <td class="haben-pres">haben</td>
           <td class="haben-praet">hatten</td>
           <td class="haben-k2">hätten</td>
-
           <td class="werd-pres">werden</td>
           <td class="werd-praet">wurden</td>
           <td class="werd-k2">würden</td>
