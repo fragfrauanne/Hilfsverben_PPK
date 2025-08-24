@@ -6,20 +6,10 @@
 <title>Hilfsverben / Präsens – Präteritum – Konjunktiv II</title>
 <style>
   :root{
-    /* Pastell-Paletten (hell → dunkler) */
-    /* sein = Gelb (warm, pastellig) */
-    --sein-1:#FFF7DC; --sein-2:#FFE7A8; --sein-3:#FFD070; --sein-4:#F4B04A;
-
-    /* haben = Grün (Sage/Laubgrün – kein Mint) */
-    --haben-1:#EEF4EF; --haben-2:#CFE2D3; --haben-3:#A9D0B4; --haben-4:#86BE9B;
-
-    /* werden = Blau (weiches Kornblumenblau) */
-    --werd-1:#EEF3FF; --werd-2:#CAD9F6; --werd-3:#9FBCE6; --werd-4:#7AA3D6;
-
     --header-gray:#8F8F93;
     --text:#1d1d1f;
     --border:#e6e6e6;
-    --radius:14px;                 /* runder, pilliger */
+    --radius:14px;
     --shadow:0 2px 6px rgba(0,0,0,.05);
   }
 
@@ -32,40 +22,39 @@
 
   table{ width:100%; border-collapse:separate; border-spacing:10px; }
   th, td{
-    padding: .55rem .9rem;               /* kompakter wie in deiner Vorlage */
+    padding:.55rem .9rem;
     text-align:center;
-    border-radius: var(--radius);
+    border-radius:var(--radius);
     border:1px solid var(--border);
-    box-shadow: var(--shadow);
-    font-size: 14px;                     /* kleinere Schrift */
-    line-height: 1.2;                    /* gleichmäßige Höhe */
-    white-space: nowrap;
+    box-shadow:var(--shadow);
+    font-size:14px;
+    line-height:1.2;
+    white-space:nowrap;
   }
 
   /* Header */
   .spacer{ background:transparent; border:none; box-shadow:none; }
-  .verb-head{
-    background:var(--header-gray); color:#fff; font-weight:700; border:none;
-  }
-  .sub{ font-weight:700; }               /* wie deine Modalverben-Boxen */
+  .verb-head{ background:var(--header-gray); color:#fff; font-weight:700; border:none; }
+  .sub{ font-weight:700; }
 
-  /* Verlaufs-Felder je Tempus (1→2, 2→3, 3→4) */
-  .sein-pres { background:linear-gradient(180deg, var(--sein-1), var(--sein-2)); }
-  .sein-praet{ background:linear-gradient(180deg, var(--sein-2), var(--sein-3)); }
-  .sein-k2   { background:linear-gradient(180deg, var(--sein-3), var(--sein-4)); }
+  /* === Volltonfarben je Feld: Gelb → Rot über 9 Spalten === */
+.sein-pres  { background:#f7e99a; } /* helles Gelb */
+.sein-praet { background:#f7dd85; } /* gold-gelbiger */
+.sein-k2    { background:#f6c770; } /* gold-gelb (Übergang zu orange) */
 
-  .haben-pres{ background:linear-gradient(180deg, var(--haben-1), var(--haben-2)); }
-  .haben-praet{background:linear-gradient(180deg, var(--haben-2), var(--haben-3)); }
-  .haben-k2  { background:linear-gradient(180deg, var(--haben-3), var(--haben-4)); }
+.haben-pres  { background:#f4b55e; } /* weiches Orange-Gelb, klar dunkler als sein-k2 */
+.haben-praet { background:#f4a358; } /* Orange */
+.haben-k2    { background:#ef8955; } /* kräftiges Orange */
 
-  .werd-pres { background:linear-gradient(180deg, var(--werd-1), var(--werd-2)); }
-  .werd-praet{ background:linear-gradient(180deg, var(--werd-2), var(--werd-3)); }
-  .werd-k2   { background:linear-gradient(180deg, var(--werd-3), var(--werd-4)); }
+.werd-pres  { background:#ec8265; } /* orange-rot */
+.werd-praet { background:#e96d68; } /* ziegelfarben */
+.werd-k2    { background:#e57373; } /* warmes Rot */
+
+
 
   /* Personalpronomen links */
   .p{ background:#ede6e6; color:#000000; font-weight:700; }
 
-  /* Druck: kein Schatten */
   @media print{ th,td{ box-shadow:none; } }
 </style>
 </head>
@@ -171,8 +160,10 @@
         </tr>
       </tbody>
     </table>
+
     <footer style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #555;">
-    © Anne Felgentreu (08.2025)
+      © Anne Felgentreu (08.2025)
     </footer>
+  </div>
 </body>
 </html>
