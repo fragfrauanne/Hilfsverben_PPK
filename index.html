@@ -7,35 +7,58 @@
   <style>
     body {
       font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 2rem;
+      margin: 0;
+      padding: 1.5rem 0;
       background: #ffffff;
-      flex-direction: column;
-      align-items: center;
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-frame {
+      position: relative;
+      width: 1400px;
+      margin: 0 auto;
     }
 
     table {
       border-collapse: separate;
       border-spacing: 8px;
-      table-layout: fixed;   /* feste Spalten */
-      width: auto;           /* keine Anpassung, Breite durch Spalten bestimmt */
+      table-layout: fixed;
+      width: 1400px;
+      margin: 0;
+      transform-origin: top left;
     }
 
     th, td {
-      width: 130px;          /* feste Breite je Spalte → nichts bricht um */
-      padding: 0.8rem;
+      padding: 0.8rem 0.5rem;
       font-size: 0.9rem;
       text-align: center;
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border: 1px solid #ddd;
-      white-space: nowrap;   /* kein Umbruch, alles bleibt in einer Zeile */
+      white-space: nowrap;
     }
 
     th {
-      font-size: 0.9rem;
       color: white;
+    }
+
+    .title {
+      background: transparent;
+      color: black;
+      font-size: 1.4rem;
+      border: none;
+      box-shadow: none;
+    }
+
+    .empty-header {
+      background: transparent;
+      border: none;
+      box-shadow: none;
     }
 
     .verb-head {
@@ -49,141 +72,189 @@
       color: black;
     }
 
-    /* 🌈 Pastell‑Regenbogen über alle 9 Spalten (links → rechts) */
-    .sein-pres  { background:#f8b3b3; } /* rotpastell */
-    .sein-praet { background:#f9c9a9; } /* orangepastell */
-    .sein-k2    { background:#fae3a1; } /* gelbpastell */
+    .sein-pres  { background: #f8b3b3; }
+    .sein-praet { background: #f9c9a9; }
+    .sein-k2    { background: #fae3a1; }
 
-    .haben-pres { background:#c9eab5; } /* hellgrün */
-    .haben-praet{ background:#a7e8d4; } /* türkis */
-    .haben-k2   { background:#b6d9f5; } /* hellblau */
+    .haben-pres  { background: #c9eab5; }
+    .haben-praet { background: #a7e8d4; }
+    .haben-k2    { background: #b6d9f5; }
 
-    .werd-pres  { background:#b5b5f2; } /* blaupastell */
-    .werd-praet { background:#d3b7f5; } /* lila */
-    .werd-k2    { background:#f5b7d6; } /* rosé */
+    .werd-pres  { background: #b5b5f2; }
+    .werd-praet { background: #d3b7f5; }
+    .werd-k2    { background: #f5b7d6; }
 
-    /* Personalpronomen */
     .p {
-      background:#ede6e6;
-      color:#000000;
+      background: #ede6e6;
+      color: #000000;
       font-weight: bold;
     }
 
-    h1 {
-      font-size: 1.4rem;
-      margin: 0;
-      font-weight: 700;
+    footer {
       text-align: center;
-      color: black;
-      box-shadow: none;
-      background: transparent;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <table role="table" aria-label="Hilfsverben in drei Tempora">
-    <thead>
-      <tr>
-        <th colspan="10" style="background-color:transparent; color:black; font-size:1.4rem; text-align:center; border:none; box-shadow:none;">
-          Hilfsverben / Präsens – Präteritum – Konjunktiv II
-        </th>
-      </tr>
-      <tr>
-        <th style="background:transparent; box-shadow:none; border:none;"></th>
-        <th class="verb-head" colspan="3">sein</th>
-        <th class="verb-head" colspan="3">haben</th>
-        <th class="verb-head" colspan="3">werden</th>
-      </tr>
-      <tr>
-        <th style="background:transparent; box-shadow:none; border:none;"></th>
-        <th class="sub sein-pres">Präsens</th>
-        <th class="sub sein-praet">Präteritum</th>
-        <th class="sub sein-k2">Konjunktiv II</th>
-        <th class="sub haben-pres">Präsens</th>
-        <th class="sub haben-praet">Präteritum</th>
-        <th class="sub haben-k2">Konjunktiv II</th>
-        <th class="sub werd-pres">Präsens</th>
-        <th class="sub werd-praet">Präteritum</th>
-        <th class="sub werd-k2">Konjunktiv II</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="p">ich</td>
-        <td class="sein-pres">bin</td>
-        <td class="sein-praet">war</td>
-        <td class="sein-k2">wäre</td>
-        <td class="haben-pres">habe</td>
-        <td class="haben-praet">hatte</td>
-        <td class="haben-k2">hätte</td>
-        <td class="werd-pres">werde</td>
-        <td class="werd-praet">wurde</td>
-        <td class="werd-k2">würde</td>
-      </tr>
-      <tr>
-        <td class="p">du</td>
-        <td class="sein-pres">bist</td>
-        <td class="sein-praet">warst</td>
-        <td class="sein-k2">wär(e)st</td>
-        <td class="haben-pres">hast</td>
-        <td class="haben-praet">hattest</td>
-        <td class="haben-k2">hättest</td>
-        <td class="werd-pres">wirst</td>
-        <td class="werd-praet">wurdest</td>
-        <td class="werd-k2">würdest</td>
-      </tr>
-      <tr>
-        <td class="p">er / sie / es</td>
-        <td class="sein-pres">ist</td>
-        <td class="sein-praet">war</td>
-        <td class="sein-k2">wäre</td>
-        <td class="haben-pres">hat</td>
-        <td class="haben-praet">hatte</td>
-        <td class="haben-k2">hätte</td>
-        <td class="werd-pres">wird</td>
-        <td class="werd-praet">wurde</td>
-        <td class="werd-k2">würde</td>
-      </tr>
-      <tr>
-        <td class="p">wir</td>
-        <td class="sein-pres">sind</td>
-        <td class="sein-praet">waren</td>
-        <td class="sein-k2">wären</td>
-        <td class="haben-pres">haben</td>
-        <td class="haben-praet">hatten</td>
-        <td class="haben-k2">hätten</td>
-        <td class="werd-pres">werden</td>
-        <td class="werd-praet">wurden</td>
-        <td class="werd-k2">würden</td>
-      </tr>
-      <tr>
-        <td class="p">ihr</td>
-        <td class="sein-pres">seid</td>
-        <td class="sein-praet">wart</td>
-        <td class="sein-k2">wär(e)t</td>
-        <td class="haben-pres">habt</td>
-        <td class="haben-praet">hattet</td>
-        <td class="haben-k2">hättet</td>
-        <td class="werd-pres">werdet</td>
-        <td class="werd-praet">wurdet</td>
-        <td class="werd-k2">würdet</td>
-      </tr>
-      <tr>
-        <td class="p">sie / Sie</td>
-        <td class="sein-pres">sind</td>
-        <td class="sein-praet">waren</td>
-        <td class="sein-k2">wären</td>
-        <td class="haben-pres">haben</td>
-        <td class="haben-praet">hatten</td>
-        <td class="haben-k2">hätten</td>
-        <td class="werd-pres">werden</td>
-        <td class="werd-praet">wurden</td>
-        <td class="werd-k2">würden</td>
-      </tr>
-    </tbody>
-  </table>
-  <footer style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #555;">
-    © Anne Felgentreu (08.2025)
-  </footer>
+  <div class="table-container" id="table-container">
+    <div class="table-frame" id="table-frame">
+      <table
+        id="verb-table"
+        role="table"
+        aria-label="Hilfsverben im Präsens, Präteritum und Konjunktiv II"
+      >
+        <thead>
+          <tr>
+            <th colspan="10" class="title">
+              Hilfsverben / Präsens – Präteritum – Konjunktiv II
+            </th>
+          </tr>
+          <tr>
+            <th class="empty-header"></th>
+            <th class="verb-head" colspan="3">sein</th>
+            <th class="verb-head" colspan="3">haben</th>
+            <th class="verb-head" colspan="3">werden</th>
+          </tr>
+          <tr>
+            <th class="empty-header"></th>
+            <th class="sub sein-pres">Präsens</th>
+            <th class="sub sein-praet">Präteritum</th>
+            <th class="sub sein-k2">Konjunktiv II</th>
+            <th class="sub haben-pres">Präsens</th>
+            <th class="sub haben-praet">Präteritum</th>
+            <th class="sub haben-k2">Konjunktiv II</th>
+            <th class="sub werd-pres">Präsens</th>
+            <th class="sub werd-praet">Präteritum</th>
+            <th class="sub werd-k2">Konjunktiv II</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p">ich</td>
+            <td class="sein-pres">bin</td>
+            <td class="sein-praet">war</td>
+            <td class="sein-k2">wäre</td>
+            <td class="haben-pres">habe</td>
+            <td class="haben-praet">hatte</td>
+            <td class="haben-k2">hätte</td>
+            <td class="werd-pres">werde</td>
+            <td class="werd-praet">wurde</td>
+            <td class="werd-k2">würde</td>
+          </tr>
+          <tr>
+            <td class="p">du</td>
+            <td class="sein-pres">bist</td>
+            <td class="sein-praet">warst</td>
+            <td class="sein-k2">wär(e)st</td>
+            <td class="haben-pres">hast</td>
+            <td class="haben-praet">hattest</td>
+            <td class="haben-k2">hättest</td>
+            <td class="werd-pres">wirst</td>
+            <td class="werd-praet">wurdest</td>
+            <td class="werd-k2">würdest</td>
+          </tr>
+          <tr>
+            <td class="p">er / sie / es</td>
+            <td class="sein-pres">ist</td>
+            <td class="sein-praet">war</td>
+            <td class="sein-k2">wäre</td>
+            <td class="haben-pres">hat</td>
+            <td class="haben-praet">hatte</td>
+            <td class="haben-k2">hätte</td>
+            <td class="werd-pres">wird</td>
+            <td class="werd-praet">wurde</td>
+            <td class="werd-k2">würde</td>
+          </tr>
+          <tr>
+            <td class="p">wir</td>
+            <td class="sein-pres">sind</td>
+            <td class="sein-praet">waren</td>
+            <td class="sein-k2">wären</td>
+            <td class="haben-pres">haben</td>
+            <td class="haben-praet">hatten</td>
+            <td class="haben-k2">hätten</td>
+            <td class="werd-pres">werden</td>
+            <td class="werd-praet">wurden</td>
+            <td class="werd-k2">würden</td>
+          </tr>
+          <tr>
+            <td class="p">ihr</td>
+            <td class="sein-pres">seid</td>
+            <td class="sein-praet">wart</td>
+            <td class="sein-k2">wär(e)t</td>
+            <td class="haben-pres">habt</td>
+            <td class="haben-praet">hattet</td>
+            <td class="haben-k2">hättet</td>
+            <td class="werd-pres">werdet</td>
+            <td class="werd-praet">wurdet</td>
+            <td class="werd-k2">würdet</td>
+          </tr>
+          <tr>
+            <td class="p">sie / Sie</td>
+            <td class="sein-pres">sind</td>
+            <td class="sein-praet">waren</td>
+            <td class="sein-k2">wären</td>
+            <td class="haben-pres">haben</td>
+            <td class="haben-praet">hatten</td>
+            <td class="haben-k2">hätten</td>
+            <td class="werd-pres">werden</td>
+            <td class="werd-praet">wurden</td>
+            <td class="werd-k2">würden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>© Anne Felgentreu (08.2025)</footer>
+
+  <script>
+    const container = document.getElementById('table-container');
+    const frame = document.getElementById('table-frame');
+    const table = document.getElementById('verb-table');
+
+    const tableWidth = 1400;
+    let scale = 1;
+    let startDistance = 0;
+    let startScale = 1;
+
+    function distance(touches) {
+      const dx = touches[0].clientX - touches[1].clientX;
+      const dy = touches[0].clientY - touches[1].clientY;
+      return Math.hypot(dx, dy);
+    }
+
+    function applyScale() {
+      table.style.transform = `scale(${scale})`;
+      frame.style.width = `${tableWidth * scale}px`;
+      frame.style.height = `${table.offsetHeight * scale}px`;
+    }
+
+    container.addEventListener('touchstart', function (event) {
+      if (event.touches.length === 2) {
+        startDistance = distance(event.touches);
+        startScale = scale;
+      }
+    }, { passive: true });
+
+    container.addEventListener('touchmove', function (event) {
+      if (event.touches.length !== 2 || startDistance === 0) return;
+
+      event.preventDefault();
+
+      const nextScale = startScale * distance(event.touches) / startDistance;
+      scale = Math.min(1.5, Math.max(0.25, nextScale));
+      applyScale();
+    }, { passive: false });
+
+    container.addEventListener('touchend', function (event) {
+      if (event.touches.length < 2) startDistance = 0;
+    }, { passive: true });
+
+    applyScale();
+  </script>
 </body>
 </html>
